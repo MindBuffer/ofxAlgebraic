@@ -1,8 +1,7 @@
 ofxAlgebraic
 ============
 
-ofxAlgebraic will return f(value) where value is passed in through either
-the constructor or setup(T _value). It's made to semantically simplify basic
+ofxAlgebraic is made to semantically simplify basic
 trigonometry and bezier functions over two dimensions.
 
 Without any input, ofxAlgebraic will return 1.0f.
