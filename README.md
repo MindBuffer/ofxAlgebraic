@@ -4,7 +4,7 @@ ofxAlgebraic
 ofxAlgebraic is made to semantically simplify basic
 trigonometry and bezier functions over two dimensions.
 
-Without any input, ofxAlgebraic will return 1.0f.
+Without any input, ofxAlgebraic will return 1.
 
 ofxAlgebraic will take into account any information you give it.
 
@@ -38,8 +38,8 @@ Each of the types are as follows:
         ofxAlgebraic_<T>(T _value);
         ofxAlgebraic(float _value);
         ofxAlgebraicFloat(float _value);
-	ofxAlgebraicDouble(double _value);
-	ofxAlgebraicLongDouble(long double _value);
+        ofxAlgebraicDouble(double _value);
+        ofxAlgebraicLongDouble(long double _value);
 
 You can use it like this:
     
@@ -47,7 +47,8 @@ You can use it like this:
 
 Or include gradient, bezier, frequency and amplitude as well:
 
-        ofxAlgebraic_<float> algebraic(0.3f);
+        ofxAlgebraic_<float> algebraic;
+        algebraic.setup(0.3f);
         algebraic.setGradient(1.f, 4.f);
         algebraic.setAmplitude(0.8f);
         algebraic.setFrequency(3.f);
