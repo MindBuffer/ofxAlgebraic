@@ -27,7 +27,9 @@ public:
     
     T getSine();
     T getCosine();
+    T getTri();
     T getSaw();
+    T getRamp();
     T getSquare();
     T getRandom();
     T getNoiseWalk();

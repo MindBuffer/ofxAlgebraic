@@ -23,7 +23,7 @@ template<typename T> ofxAlgebraic_<T>::ofxAlgebraic_(T _value)
 , max(0.f)
 , bezier(0.f)
 {
-    assert(std::is_floating_point<T>::value && "ERROR: ofxAlgebraic_ MUST BE either float, double or long double! you NUGGET!");
+    assert(std::tr1::is_floating_point<T>::value && "ERROR: ofxAlgebraic_ MUST BE either float, double or long double! you NUGGET!");
 }
 
 //------------------------------
@@ -49,9 +49,29 @@ template<typename T> T ofxAlgebraic_<T>::getCosine()
 
 //------------------------------
 
+template<typename T> T ofxAlgebraic_<T>::getTri()
+{
+    float phase = sin(TWO_PI * value * frequency / pointX);
+    
+    if(phase>0.0){
+        return getSignal(fmod(value * (frequency*-1) / pointX, 1.0f) * 4 + 1);
+    } else if(phase<0.0){
+        return getSignal(fmod(value * frequency / pointX, 1.0f) * 4 - 3.0);
+    }
+}
+
+//------------------------------
+
 template<typename T> T ofxAlgebraic_<T>::getSaw()
 {
     return getSignal(fmod(value * frequency / pointX, 1.0f) * 2 - 1);
+}
+
+//------------------------------
+
+template<typename T> T ofxAlgebraic_<T>::getRamp()
+{
+    return getSignal(fmod(value * (frequency*-1) / pointX, 1.0f) * 2 + 1);
 }
 
 //------------------------------
