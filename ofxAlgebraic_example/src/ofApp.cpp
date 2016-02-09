@@ -5,6 +5,9 @@ void ofApp::setup(){
 
     shape = 2;
     phase = 0.0;
+    
+    // Try uncommenting this line for different oscialltion behaviour.
+    //osc.setDMXMode(true);
 }
 
 //--------------------------------------------------------------
